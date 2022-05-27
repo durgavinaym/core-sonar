@@ -15,7 +15,6 @@ pipeline{
          }  
           stage('SonarQube Analysis')
           {
-            #def mvn = tool 'Default Maven';#
             withSonarQubeEnv(Sonarqube-9.4)
            {
             sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=java"
